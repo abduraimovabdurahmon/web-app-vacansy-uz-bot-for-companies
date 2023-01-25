@@ -39,7 +39,7 @@ const checkSelect = (idName)=>{
 document.getElementById('company').addEventListener('input', function() {
     data.company = this.value;
     check(data);
-    checkText(/^[A-Za-z]{0,50}$/g, 0, this.value, 'company');
+    checkText(/^[A-Za-z\s]{0,50}$/g, 0, this.value, 'company');
 });
 
 // phone
