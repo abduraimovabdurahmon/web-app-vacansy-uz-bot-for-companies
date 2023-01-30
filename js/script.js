@@ -39,7 +39,7 @@ const checkSelect = (idName)=>{
 document.getElementById('company').addEventListener('input', function() {
     data.company = this.value.split("'").join('+');
     check(data);
-    checkText(/^[A-Za-z'\s]{0,50}$/g, 0, this.value, 'company');
+    checkText(/^[A-Za-z'+\s]{0,50}$/g, 0, this.value, 'company');
 });
 
 // phone
@@ -129,7 +129,7 @@ document.getElementById('info').addEventListener('input', function() {
 
 const check = (data) => {
     if(data.company && data.phone && data.email && data.telegram && data.price && data.location && data.experience && data.speciality && data.time1 && data.time2 && data.time3 && data.time4 && data.info) {
-        if(/^[A-Za-z'\s]{0,50}$/g.test(data.company) && /^9989[012345789][0-9]{7}$/g.test(data.phone) && /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(data.email) && /^@[A-Za-z0-9_]{5,25}$/g.test(data.telegram) && /^[0-9]{0,9}$/g.test(data.price) && /^[A-Za-z0-9\s.+-,()#'!]{0,200}$/g.test(data.info)){
+        if(/^[A-Za-z+'\s]{0,50}$/g.test(data.company) && /^9989[012345789][0-9]{7}$/g.test(data.phone) && /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(data.email) && /^@[A-Za-z0-9_]{5,25}$/g.test(data.telegram) && /^[0-9]{0,9}$/g.test(data.price) && /^[A-Za-z0-9\s.+-,()#'!]{0,200}$/g.test(data.info)){
             mainButton.show();
         }
         else{
